@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vozes da Terra | Blog dos Povos Indígenas</title>
+    <!-- Tailwind CSS CDN --
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        earth: {
+                            50: '#fdf8f5',
+                            100: '#f7eee7',
+                            200: '#edd8c9',
+                            300: '#dfba9f',
+                            600: '#b87348',
+                            700: '#9b5b35',
+                            800: '#80482b',
+                            900: '#683c26',
+                        },
+                        forest: {
+                            50: '#f2f8f5',
+                            100: '#e1f0e9',
+                            600: '#2d6a4f',
+                            700: '#1e523b',
+                            800: '#183f2e',
+                            900: '#0f291e',
+                        },
+                        sand: '#F5F2EB',
+                        ochre: '#C86D3B'
+                    },
+                    fontFamily: {
+                        title: ['Playfair Display', 'serif'],
+                        body: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .pattern-bg {
+            background-color: #F5F2EB;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30 Z M30 10 L50 30 L30 50 L10 30 Z' fill='%239b5b35' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .indigenous-border {
+            background-image: repeating-linear-gradient(45deg, #b87348 0, #b87348 10px, transparent 0, transparent 20px), repeating-linear-gradient(-45deg, #1e523b 0, #1e523b 10px, transparent 0, transparent 20px);
+            background-size: 20px 8px;
+            background-repeat: repeat-x;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F5F2EB;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #b87348;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9b5b35;
+        }
+    </style>
+</head>
+<body class="font-body pattern-bg text-stone-800 antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Faixa Decorativa Superior -->
+    <div class="h-2 indigenous-border w-full"></div>
+
+    <!-- CABEÇALHO / HEADER -->
+    <header class="bg-forest-900 text-sand sticky top-0 z-40 shadow-md transition-all duration-300" id="header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3 group" onclick="resetFilters(); return false;">
+                    <div class="w-11 h-11 rounded-full bg-earth-600 flex items-center justify-center text-sand text-xl font-bold shadow-inner group-hover:bg-ochre transition">
+                        <span class="font-title">VT</span>
+                    </div>
+                    <div>
+                        <span class="font-title text-2xl font-bold tracking-wide block leading-none text-sand group-hover:text-earth-300 transition">Vozes da Terra</span>
+                        <span class="text-xs text-earth-300 tracking-widest uppercase font-medium">Cultura & Ancestralidade</span>
+                    </div>
+                </a>
+
+                <!-- Navegação Desktop -->
+                <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                    <a href="#" class="nav-link text-sand hover:text-earth-300 transition py-1 border-b-2 border-earth-300" data-category="todos">Início</a>
+                    <a href="#" class="nav-link text-stone-300 hover:text-earth-300 transition py-1 border-b-2 border-transparent" data-category="Ecologia & Território">Ecologia & Território</a>
+                    <a href="#" class="nav-link text-stone-300 hover:text-earth-300 transition py-1 border-b-2 border-transparent" data-category="Arte & Design">Arte & Arquitetura</a>
+                    <a href="#" class="nav-link text-stone-300 hover:text-earth-300 transition py-1 border-b-2 border-transparent" data-category="Línguas & Tradições">Música & Tradições</a>
+                    <a href="#" class="nav-link text-stone-300 hover:text-earth-300 transition py-1 border-b-2 border-transparent" data-category="História">História & Ciência</a>
+                </nav>
+
+                <!-- Barra de Pesquisa e Menu Mobile Button -->
+                <div class="flex items-center space-x-4">
+                    <div class="relative hidden sm:block">
+                        <input type="text" id="searchInput" placeholder="Buscar artigos..." 
+                               class="bg-forest-800 text-sand text-sm rounded-full pl-10 pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-earth-600 w-48 focus:w-64 transition-all duration-300 placeholder-stone-400 border border-forest-700">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-stone-400 text-xs"></i>
+                    </div>
+
+                    <!-- Botão Menu Mobile -->
+                    <button id="mobileMenuBtn" class="md:hidden text-sand hover:text-earth-300 focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile Expandível -->
+        <div id="mobileMenu" class="hidden md:hidden bg-forest-800 border-t border-forest-700 px-4 pt-2 pb-4 space-y-2">
+            <div class="mb-3 pt-2">
+                <input type="text" id="mobileSearchInput" placeholder="Buscar no blog..." 
+                       class="w-full bg-forest-900 text-sand text-sm rounded-lg pl-9 pr-4 py-2 border border-forest-700 focus:outline-none focus:ring-1 focus:ring-earth-600">
+            </div>
+            <a href="#" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-sand hover:bg-forest-700" data-category="todos">Início</a>
+            <a href="#" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-stone-300 hover:bg-forest-700" data-category="Ecologia & Território">Ecologia & Território</a>
+            <a href="#" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-stone-300 hover:bg-forest-700" data-category="Arte & Design">Arte & Arquitetura</a>
+            <a href="#" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-stone-300 hover:bg-forest-700" data-category="Línguas & Tradições">Música & Tradições</a>
+            <a href="#" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-stone-300 hover:bg-forest-700" data-category="História">História & Ciência</a>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
+        
+        <!-- HERO / ARTIGO EM DESTAQUE -->
+        <section class="mb-12" id="heroSection">
+            <div class="bg-stone-900 rounded-2xl overflow-hidden shadow-xl text-sand grid grid-cols-1 lg:grid-cols-12 relative group">
+                <!-- Imagem do topo enviada pelo usuário -->
+                <div class="lg:col-span-7 relative min-h-[320px] lg:min-h-[440px] overflow-hidden cursor-pointer" onclick="openArticleModal(0)">
+                    <img id="heroImage" src="" 
+                         alt="Mulheres indígenas manejando palha verde no Cerrado" 
+                         class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700 opacity-95">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-900 via-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-stone-900"></div>
+                    <span class="absolute top-4 left-4 bg-earth-600 text-sand text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+                        Destaque da Semana
+                    </span>
+                </div>
+                
+                <!-- Info do Hero -->
+                <div class="lg:col-span-5 p-6 sm:p-8 lg:p-10 flex flex-col justify-between bg-stone-900">
+                    <div>
+                        <div class="flex items-center space-x-3 text-xs text-earth-300 mb-3">
+                            <span class="font-medium uppercase" id="heroCategory">Ecologia & Território</span>
+                            <span>•</span>
+                            <span id="heroDate">11 de Novembro, 2026</span>
+                        </div>
+                        <h1 id="heroTitle" onclick="openArticleModal(0)" class="font-title text-2xl sm:text-3xl lg:text-4xl font-bold text-sand mb-4 leading-tight hover:text-earth-300 transition cursor-pointer">
+                            O Protagonismo Indígena na Conservação da Amazônia e do Cerrado
+                        </h1>
+                        <p id="heroExcerpt" class="text-stone-300 text-sm sm:text-base mb-6 line-clamp-3 font-light leading-relaxed">
+                            Como o trabalho artesanal sustentável com palhas nativas, o manejo tradicional do solo e a vigilância constante dos territórios mantêm as florestas nativas vivas e protegidas.
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-stone-800">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-forest-700 flex items-center justify-center font-bold text-sand text-sm border border-forest-600">
+                                SG
+                            </div>
+                            <div>
+                                <p id="heroAuthor" class="text-sm font-semibold text-sand">Sônia Guajajara</p>
+                                <p class="text-xs text-stone-400">7 min de leitura</p>
+                            </div>
+                        </div>
+                        <button onclick="openArticleModal(0)" class="bg-earth-600 hover:bg-earth-700 text-sand px-5 py-2.5 rounded-xl text-sm font-medium transition duration-200 flex items-center space-x-2 shadow-md">
+                            <span>Ler artigo</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ESTRUTURA PRINCIPAL (GRID + SIDEBAR) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <!-- LISTA DE ARTIGOS (GRID) - 8 COLUNAS DESKTOP -->
+            <section class="lg:col-span-8">
+                
+                <!-- Cabeçalho da Seção -->
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-earth-200 gap-4">
+                    <h2 id="sectionTitle" class="font-title text-2xl font-bold text-forest-900 flex items-center">
+                        <i class="fa-solid fa-feather-pointed text-earth-600 mr-2 text-xl"></i>
+                        Últimas Publicações
+                    </h2>
+                    <span id="resultsCount" class="text-xs text-stone-500 font-medium">Exibindo todos os artigos</span>
+                </div>
+
+                <!-- Grid dos Cards -->
+                <div id="postsGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-6"></div>
+
+                <!-- Estado Vazio -->
+                <div id="emptyState" class="hidden text-center py-12 bg-white rounded-2xl shadow-sm border border-earth-100 p-6">
+                    <i class="fa-solid fa-compass text-4xl text-earth-300 mb-3"></i>
+                    <h3 class="font-title text-lg font-bold text-stone-700">Nenhum artigo encontrado</h3>
+                    <p class="text-sm text-stone-500 mt-1">Tente pesquisar por outros termos ou escolha outra categoria.</p>
+                    <button onclick="resetFilters()" class="mt-4 px-4 py-2 bg-forest-700 text-sand text-xs font-semibold rounded-lg hover:bg-forest-800 transition">
+                        Limpar Filtros
+                    </button>
+                </div>
+            </section>
+
+            <!-- BARRA LATERAL (SIDEBAR) - 4 COLUNAS DESKTOP -->
+            <aside class="lg:col-span-4 space-y-8">
+                
+                <!-- Card Sobre o Blog -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-earth-200 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-earth-100 rounded-full -mr-8 -mt-8 opacity-50"></div>
+                    <h3 class="font-title text-xl font-bold text-forest-900 mb-3 relative">Sobre o Blog</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed mb-4 relative">
+                        O <strong class="text-earth-700">Vozes da Terra</strong> é um espaço dedicado à difusão da memória, saberes, arte e lutas dos povos originários do Brasil. Nosso objetivo é amplificar narrativas indígenas através do respeito e valorização cultural.
+                    </p>
+                    <div class="flex items-center space-x-3 text-forest-800 pt-2 border-t border-earth-100 text-xs font-medium">
+                        <i class="fa-solid fa-tree text-earth-600"></i>
+                        <span>Preservação • Cultura • Autonomia</span>
+                    </div>
+                </div>
+
+                <!-- Artigos Mais Lidos -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-earth-200">
+                    <h3 class="font-title text-lg font-bold text-forest-900 mb-4 pb-2 border-b border-earth-100 flex items-center">
+                        <i class="fa-solid fa-fire text-earth-600 mr-2"></i>
+                        Mais Lidos
+                    </h3>
+                    <div class="space-y-4" id="popularPostsContainer"></div>
+                </div>
+
+            </aside>
+        </div>
+    </main>
+
+    <!-- MODAL DE ARTIGO COMPLETO -->
+    <div id="articleModal" class="fixed inset-0 bg-stone-900/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 sm:p-6 overflow-y-auto" onclick="closeArticleModal()">
+        <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-earth-200 relative my-auto" onclick="event.stopPropagation()">
+            
+            <!-- Botão Fechar -->
+            <button onclick="closeArticleModal()" class="absolute top-4 right-4 bg-stone-900/60 hover:bg-stone-900 text-white w-9 h-9 rounded-full flex items-center justify-center transition z-20 backdrop-blur-sm">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Imagem de Capa do Modal -->
+            <div class="h-64 sm:h-80 w-full relative">
+                <img id="modalImage" src="" alt="" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-stone-950/70 via-transparent to-transparent"></div>
+                <div class="absolute bottom-4 left-6 right-6 text-sand">
+                    <span id="modalCategory" class="bg-earth-600 text-sand text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider"></span>
+                </div>
+            </div>
+
+            <!-- Conteúdo do Modal -->
+            <div class="p-6 sm:p-8">
+                <h1 id="modalTitle" class="font-title text-2xl sm:text-3xl font-bold text-forest-900 mb-4 leading-tight"></h1>
+                
+                <div class="flex items-center justify-between pb-6 mb-6 border-b border-earth-100 text-xs text-stone-500">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-9 h-9 rounded-full bg-forest-700 text-sand flex items-center justify-center font-bold text-xs" id="modalAuthorAvatar"></div>
+                        <div>
+                            <span id="modalAuthor" class="font-semibold text-stone-800 block"></span>
+                            <span id="modalDate"></span>
+                        </div>
+                    </div>
+                    <span id="modalReadTime" class="bg-earth-50 text-earth-800 px-3 py-1 rounded-full border border-earth-200"></span>
+                </div>
+
+                <!-- Texto do Artigo -->
+                <div id="modalBody" class="prose max-w-none text-stone-700 leading-relaxed space-y-4 text-sm sm:text-base font-light"></div>
+
+                <!-- Rodapé do Modal -->
+                <div class="mt-8 pt-6 border-t border-earth-100 flex flex-wrap items-center justify-between gap-4">
+                    <div class="flex items-center space-x-2 text-xs text-stone-500">
+                        <span>Compartilhar:</span>
+                        <button onclick="shareArticle()" class="w-8 h-8 rounded-full bg-earth-50 hover:bg-earth-100 text-earth-700 flex items-center justify-center transition">
+                            <i class="fa-solid fa-link"></i>
+                        </button>
+                    </div>
+                    <button onclick="closeArticleModal()" class="px-5 py-2 bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-semibold rounded-xl transition">
+                        Fechar Artigo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LÓGICA DO BLOG -->
+    <script>
+        // GERADOR DE SVG EMBUTIDO EM BASE64 PARA A FOTO DO TOPO (MULHERES INDÍGENAS NO CERRADO MANEJANDO PALHA VERDE)
+        const generateCerradoHeroImg = () => {
+            const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="1000" height="650">
+                <defs>
+                    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#8BB8A8"/>
+                        <stop offset="60%" stop-color="#CFDFD5"/>
+                        <stop offset="100%" stop-color="#E8E4D5"/>
+                    </linearGradient>
+                    <linearGradient id="ground" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#C58552"/>
+                        <stop offset="100%" stop-color="#8C4E28"/>
+                    </linearGradient>
+                    <linearGradient id="palmGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#73A938"/>
+                        <stop offset="100%" stop-color="#2D5A1E"/>
+                    </linearGradient>
+                </defs>
+                <!-- Fundo Vegetação & Céu -->
+                <rect width="1000" height="650" fill="url(#sky)"/>
+                <rect y="320" width="1000" height="330" fill="url(#ground)"/>
+                
+                <!-- Árvores do Cerrado -->
+                <path d="M120 320 Q140 220 180 180 M180 180 Q220 140 290 160 M180 180 Q130 140 100 150" stroke="#4A3525" stroke-width="12" stroke-linecap="round" fill="none"/>
+                <circle cx="290" cy="160" r="70" fill="#3A5E2B" opacity="0.85"/>
+                <circle cx="100" cy="150" r="50" fill="#2E4C22" opacity="0.85"/>
+
+                <path d="M820 340 Q800 240 760 190 M760 190 Q710 150 650 170 M760 190 Q810 130 870 140" stroke="#3D2B1F" stroke-width="14" stroke-linecap="round" fill="none"/>
+                <circle cx="650" cy="170" r="85" fill="#4B6B32" opacity="0.9"/>
+                <circle cx="870" cy="140" r="60" fill="#3B5926" opacity="0.9"/>
+
+                <!-- Gramíneas e Matos -->
+                <path d="M0 360 Q200 340 400 370 T800 350 T1000 370 L1000 650 L0 650 Z" fill="#9E8044" opacity="0.6"/>
+                <path d="M50 420 Q300 390 600 430 T1000 410 L1000 650 L0 650 Z" fill="#7A5C28" opacity="0.7"/>
+
+                <!-- Mulher Principal (Em pé tecendo cesto verde) -->
+                <!-- Saia -->
+                <path d="M 170 370 L 330 360 L 350 620 L 150 620 Z" fill="#E69C6C"/>
+                <!-- Tronco Indígena -->
+                <path d="M 210 210 Q 250 190 290 210 L 310 370 L 190 370 Z" fill="#9E5330"/>
+                <!-- Cabeça / Cabelo Preto -->
+                <circle cx="250" cy="150" r="42" fill="#1C1817"/>
+                <path d="M 210 150 Q 250 120 290 150 L 295 240 Q 250 260 205 240 Z" fill="#1C1817"/>
+                <ellipse cx="250" cy="165" rx="22" ry="26" fill="#9E5330"/>
+
+                <!-- Cesto de Palha Verde em Suas Mãos -->
+                <path d="M 200 270 Q 260 380 320 270 Q 260 220 200 270 Z" fill="#4E8027"/>
+                <path d="M 180 230 Q 240 120 260 260 M 340 220 Q 280 120 260 260" stroke="#3D681D" stroke-width="12" stroke-linecap="round" fill="none"/>
+                <!-- Folhas de Palha sobressaindo -->
+                <path d="M 210 250 C 180 150, 240 110, 250 180 C 260 110, 310 140, 290 240" fill="url(#palmGreen)"/>
+
+                <!-- Mulheres Sentadas ao Fundo -->
+                <!-- Mulher 2 (ao centro) -->
+                <circle cx="510" cy="270" r="30" fill="#1C1817"/>
+                <path d="M 470 310 Q 510 290 550 310 L 570 440 L 450 440 Z" fill="#8D4525"/>
+                <path d="M 430 380 Q 510 360 590 380 L 580 460 L 420 460 Z" fill="#2E4C6D"/>
+
+                <!-- Mulher 3 (direita sentada trançando palhas) -->
+                <circle cx="770" cy="350" r="32" fill="#1C1817"/>
+                <path d="M 720 390 Q 770 370 820 390 L 840 540 L 700 540 Z" fill="#8D4525"/>
+                <path d="M 680 470 L 860 470 L 880 600 L 660 600 Z" fill="#D94E34"/>
+                <!-- Leque de palhas verdes no chão -->
+                <path d="M 770 510 L 980 480 M 770 520 L 990 510 M 770 530 L 970 550 M 770 540 L 950 580" stroke="#558C27" stroke-width="10" stroke-linecap="round"/>
+
+                <!-- Grafismos e Detalhes de Luz -->
+                <rect x="0" y="0" width="1000" height="650" fill="#FF9900" opacity="0.04"/>
+            </svg>`;
+            return 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svg)));
+        };
+
+        const cerradoHeroImageBase64 = generateCerradoHeroImg();
+
+        // GERADORES AUXILIARES PARA DEMAIS ARTIGOS
+        const generateSvgArt = (color1, color2, text) => {
+            const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+                <rect width="800" height="500" fill="${color1}"/>
+                <circle cx="400" cy="250" r="180" fill="${color2}" opacity="0.3"/>
+                <path d="M 0 400 Q 200 300 400 400 T 800 400 L 800 500 L 0 500 Z" fill="${color2}" opacity="0.6"/>
+                <text x="50%" y="48%" dominant-baseline="middle" text-anchor="middle" font-family="Playfair Display, serif" font-size="36" font-weight="bold" fill="#F5F2EB">${text}</text>
+            </svg>`;
+            return 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svg)));
+        };
+
+        // BASE DE DADOS DOS ARTIGOS
+        const articles = [
+            {
+                id: 0,
+                title: "O Protagonismo Indígena na Conservação da Amazônia e do Cerrado",
+                category: "Ecologia & Território",
+                date: "11 de Nov, 2026",
+                author: "Sônia Guajajara",
+                authorInitials: "SG",
+                readTime: "7 min",
+                // TROQUE A IMAGEM 1: cole abaixo o caminho ou URL da foto
+                image: "https://ispn.org.br/wp-content/uploads/2019/12/KRAHO_A_39274.jpg",
+                fallbackImg: "https://ispn.org.br/wp-content/uploads/2019/12/KRAHO_A_39274.jpg",
+                excerpt: "Conheça como os conhecimentos e a atuação dos povos indígenas ajudam a proteger a Amazônia, o Cerrado e a biodiversidade brasileira.",
+                content: `
+                    <p>A proteção da Amazônia e do Cerrado também passa pelo trabalho e pelos conhecimentos dos povos indígenas. A relação dessas comunidades com o território contribui para conservar rios, florestas, animais e plantas.</p>
+                    <h3 class="font-title text-xl font-bold text-forest-900 mt-6 mb-2">Conhecimento que protege</h3>
+                    <p>Práticas tradicionais de manejo, observação da natureza e cuidado com os recursos naturais são transmitidas entre gerações. Proteger os territórios indígenas significa também preservar culturas e conhecimentos essenciais para o futuro ambiental do país.</p>
+                `,
+                views: 2450
+            },
+            {
+                id: 1,
+                title: "Arquitetura Ancestral: O Design e a Engenharia das Malocas e Ocas Tradicionais",
+                category: "Arte & Design",
+                date: "09 de Nov, 2026",
+                author: "Jaider Esbell",
+                authorInitials: "JE",
+                readTime: "5 min",
+                // TROQUE A IMAGEM 2
+                image: "https://s2-casaejardim.glbimg.com/r_JlzzT_myYPM8DWtImsEUhW1ms=/0x0:1400x1050/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_a0b7e59562ef42049f4e191fe476fe7d/internal_photos/bs/2026/R/K/fKAuZdQASuNlc8RC9cVg/oca-ponta-de-pedras-santarem-1-.jpg",
+                fallbackImg: "https://s2-casaejardim.glbimg.com/r_JlzzT_myYPM8DWtImsEUhW1ms=/0x0:1400x1050/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_a0b7e59562ef42049f4e191fe476fe7d/internal_photos/bs/2026/R/K/fKAuZdQASuNlc8RC9cVg/oca-ponta-de-pedras-santarem-1-.jpg",
+                excerpt: "As ocas e malocas mostram como conhecimentos tradicionais podem criar construções adaptadas ao clima, aos materiais e à vida comunitária.",
+                content: `
+                    <p>As ocas e malocas são exemplos da diversidade da arquitetura indígena. Construídas com materiais disponíveis em cada região, essas habitações refletem conhecimentos sobre o clima, o ambiente e a organização das comunidades.</p>
+                    <h3 class="font-title text-xl font-bold text-forest-900 mt-6 mb-2">Arquitetura em harmonia com a natureza</h3>
+                    <p>Madeira, palha e fibras podem ser combinadas em estruturas que favorecem a ventilação e oferecem proteção. As técnicas variam entre os povos e demonstram que a arquitetura tradicional reúne criatividade, experiência e identidade cultural.</p>
+                `,
+                views: 1820
+            },
+            {
+                id: 2,
+                title: "A Música e os Instrumentos Sagrados: Dos Chocalhos Maracás aos Torés da Mata",
+                category: "Línguas & Tradições",
+                date: "07 de Nov, 2026",
+                author: "Marlisson Pankararu",
+                authorInitials: "MP",
+                readTime: "4 min",
+                // TROQUE A IMAGEM 3
+                image: "https://cdn-blog.superprof.com/blog_br/wp-content/uploads/2026/01/chocalho-indigena-flauta-indigena.jpg",
+                fallbackImg: "https://cdn-blog.superprof.com/blog_br/wp-content/uploads/2026/01/chocalho-indigena-flauta-indigena.jpg",
+                excerpt: "Maracás, flautas e cantos fazem parte de diferentes expressões musicais indígenas, ligadas à memória, à celebração e à espiritualidade.",
+                content: `
+                    <p>A música ocupa um lugar importante em muitas culturas indígenas. Cantos e instrumentos, como maracás e flautas, podem acompanhar celebrações, rituais e momentos de convivência, cada qual com seus significados próprios.</p>
+                    <h3 class="font-title text-xl font-bold text-forest-900 mt-6 mb-2">Sons que carregam histórias</h3>
+                    <p>Os instrumentos são produzidos com materiais e técnicas que variam de acordo com cada povo. Mais do que produzir música, esses sons ajudam a transmitir conhecimentos, fortalecer vínculos e manter vivas tradições culturais.</p>
+                `,
+                views: 1540
+            },
+            {
+                id: 3,
+                title: "Astronomia Indígena: O Céu Tupi-Guarani e as Constelações do Cruzeiro do Sul",
+                category: "História",
+                date: "05 de Nov, 2026",
+                author: "Maybí Machacalis",
+                authorInitials: "MM",
+                readTime: "6 min",
+                // TROQUE A IMAGEM 4
+                image: "https://invivo.fiocruz.br/wp-content/uploads/2023/08/tupi-guarani2.jpg",
+                fallbackImg: "https://invivo.fiocruz.br/wp-content/uploads/2023/08/tupi-guarani2.jpg",
+                excerpt: "A observação do Sol, da Lua e das estrelas ajuda diferentes povos indígenas a compreender os ciclos da natureza e a passagem do tempo.",
+                content: `
+                    <p>Para muitos povos indígenas, observar o céu é uma forma de compreender o mundo. O movimento do Sol, da Lua e das estrelas pode orientar a percepção das estações e de períodos importantes para as atividades comunitárias.</p>
+                    <h3 class="font-title text-xl font-bold text-forest-900 mt-6 mb-2">Diferentes maneiras de olhar o céu</h3>
+                    <p>As constelações e suas histórias variam entre os povos. Esses conhecimentos, transmitidos entre gerações, mostram a relação entre astronomia, cultura e natureza e merecem ser reconhecidos e respeitados.</p>
+                `,
+                views: 1980
+            },
+            {
+                id: 4,
+                title: "Bioeconomia Indígena: Manejo Sustentável do Açaí e da Castanha",
+                category: "Ecologia & Território",
+                date: "03 de Nov, 2026",
+                author: "Kajá Kayapó",
+                authorInitials: "KK",
+                readTime: "5 min",
+                // TROQUE A IMAGEM 5
+                image: "https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/latin-america/kabure-portada-min.jpg?crop=0%2C96%2C4608%2C2880&wid=640&hei=400&scl=7.2",
+                fallbackImg: "https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/latin-america/kabure-portada-min.jpg?crop=0%2C96%2C4608%2C2880&wid=640&hei=400&scl=7.2",
+                excerpt: "A coleta de frutos, sementes e castanhas pode gerar renda e valorizar práticas de cuidado com a floresta e seus recursos.",
+                content: `
+                    <p>A bioeconomia indígena reúne atividades que valorizam a biodiversidade e os conhecimentos tradicionais. A coleta de castanhas, a produção de açaí e o artesanato são exemplos de iniciativas que podem contribuir para a renda das comunidades.</p>
+                    <h3 class="font-title text-xl font-bold text-forest-900 mt-6 mb-2">Renda com respeito à floresta</h3>
+                    <p>Quando realizadas de forma responsável e com respeito aos direitos das comunidades, essas atividades fortalecem a autonomia e ajudam a manter a floresta em pé. Preservar o território também significa proteger cultura, alimento e modos de vida.</p>
+                `,
+                views: 1410
+            },
+            {
+                id: 5,
+                title: "Literatura Indígena Contemporânea: A Voz de Autores da Terra nas Livrarias",
+                category: "História",
+                date: "01 de Nov, 2026",
+                author: "Sataré Mawé",
+                authorInitials: "SM",
+                readTime: "5 min",
+                // TROQUE A IMAGEM 6
+                image: "https://images.educamaisbrasil.com.br/content/noticias/6-livros-de-autores-da-literatura-indigena-para-ler-no-dia-do-escritor_g.jpg",
+                fallbackImg: "https://images.educamaisbrasil.com.br/content/noticias/6-livros-de-autores-da-literatura-indigena-para-ler-no-dia-do-escritor_g.jpg",
+                excerpt: "Escritores indígenas compartilham suas próprias histórias e ampliam a presença dos povos originários na literatura brasileira.",
+                content: `
+                    <p>A literatura indígena contemporânea abre espaço para que escritores e escritoras contem suas histórias a partir de suas próprias experiências. Em livros, poemas e ensaios, abordam temas como identidade, memória, território e ancestralidade.</p>
+                    <h3 class="font-title text-xl font-bold text-forest-900 mt-6 mb-2">Autores e novas perspectivas</h3>
+                    <p>Daniel Munduruku, Ailton Krenak e Eliane Potiguara estão entre os nomes conhecidos dessa produção diversa. Ler essas obras é reconhecer a presença indígena na cultura brasileira e conhecer diferentes formas de compreender o mundo.</p>
+                `,
+                views: 1610
+            },
+            {
+                id: 6,
+                title: "Jogos dos Povos Indígenas: Esporte, Identidade e Celebração Intercultural",
+                category: "Línguas & Tradições",
+                date: "28 de Out, 2026",
+                author: "Yawara Guarani",
+                authorInitials: "YG",
+                readTime: "4 min",
+                // TROQUE A IMAGEM 7
+                image: "https://imagens.ebc.com.br/ZsnE1epccvRDg8bmhrlggWEdeZo=/1170x700/smart/https://agenciabrasil.ebc.com.br/sites/default/files/atoms/image/jogos_indigenas_1.jpg?itok=d4fZ8zz9",
+                fallbackImg: "https://imagens.ebc.com.br/ZsnE1epccvRDg8bmhrlggWEdeZo=/1170x700/smart/https://agenciabrasil.ebc.com.br/sites/default/files/atoms/image/jogos_indigenas_1.jpg?itok=d4fZ8zz9",
+                excerpt: "Corridas, arco e flecha, canoagem e outras práticas mostram a diversidade esportiva e cultural dos povos indígenas.",
+                content: `
+                    <p>As práticas esportivas indígenas são diversas e podem envolver corrida, arco e flecha, canoagem e corrida de tora. Cada atividade possui regras, histórias e significados que variam conforme a comunidade.</p>
+                    <h3 class="font-title text-xl font-bold text-forest-900 mt-6 mb-2">Esporte, encontro e identidade</h3>
+                    <p>Os Jogos dos Povos Indígenas promovem encontros, intercâmbio e visibilidade. Mais do que competições, são oportunidades de celebrar culturas, fortalecer relações e mostrar que os povos originários estão presentes e ativos na sociedade brasileira.</p>
+                `,
+                views: 1250
+            }
+        ];
+
+        let currentCategory = 'todos';
+        let searchQuery = '';
+
+        // INICIALIZAÇÃO
+        document.addEventListener('DOMContentLoaded', () => {
+            renderHero();
+            renderPosts();
+            renderPopularPosts();
+            setupEvents();
+        });
+
+        // RENDERIZAR HERO
+        function renderHero() {
+            const heroArt = articles[0];
+            document.getElementById('heroImage').src = heroArt.image;
+            document.getElementById('heroCategory').textContent = heroArt.category;
+            document.getElementById('heroDate').textContent = heroArt.date;
+            document.getElementById('heroTitle').textContent = heroArt.title;
+            document.getElementById('heroExcerpt').textContent = heroArt.excerpt;
+            document.getElementById('heroAuthor').textContent = heroArt.author;
+        }
+
+        // RENDERIZAR ARTIGOS NO GRID
+        function renderPosts() {
+            const grid = document.getElementById('postsGrid');
+            const emptyState = document.getElementById('emptyState');
+            const resultsCount = document.getElementById('resultsCount');
+
+            let filtered = articles.filter(art => {
+                const matchCategory = currentCategory === 'todos' || art.category === currentCategory;
+                const matchSearch = art.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                                    art.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchCategory && matchSearch;
+            });
+
+            resultsCount.textContent = `Exibindo ${filtered.length} artigo(s)`;
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+            
+            grid.innerHTML = filtered.map(art => `
+                <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 border border-earth-100 flex flex-col justify-between group">
+                    <div>
+                        <!-- Capa com imagem confiável -->
+                        <div class="relative h-48 overflow-hidden cursor-pointer" onclick="openArticleModal(${art.id})">
+                            <img src="${art.image}" 
+                                 alt="${art.title}" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-forest-900/80 backdrop-blur-sm text-sand text-[10px] font-semibold px-2.5 py-1 rounded-md uppercase tracking-wider">
+                                ${art.category}
+                            </span>
+                        </div>
+                        
+                        <!-- Conteúdo -->
+                        <div class="p-5">
+                            <div class="text-xs text-stone-400 mb-2 flex items-center space-x-2">
+                                <span>${art.date}</span>
+                                <span>•</span>
+                                <span>${art.readTime}</span>
+                            </div>
+                            <h3 onclick="openArticleModal(${art.id})" class="font-title text-lg font-bold text-forest-900 mb-2 line-clamp-2 hover:text-earth-600 transition cursor-pointer leading-snug">
+                                ${art.title}
+                            </h3>
+                            <p class="text-stone-600 text-xs leading-relaxed line-clamp-3 mb-4 font-light">
+                                ${art.excerpt}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Autor e Botão -->
+                    <div class="px-5 pb-5 pt-2 border-t border-stone-100 flex items-center justify-between mt-auto">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-7 h-7 rounded-full bg-earth-100 text-earth-800 flex items-center justify-center font-bold text-[10px]">
+                                ${art.authorInitials}
+                            </div>
+                            <span class="text-xs text-stone-700 font-medium">${art.author}</span>
+                        </div>
+                        <button onclick="openArticleModal(${art.id})" class="text-earth-600 hover:text-earth-800 text-xs font-semibold flex items-center space-x-1 transition">
+                            <span>Ler</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        // RENDERIZAR MAIS LIDOS NA SIDEBAR
+        function renderPopularPosts() {
+            const container = document.getElementById('popularPostsContainer');
+            const sorted = [...articles].sort((a, b) => b.views - a.views).slice(0, 4);
+
+            container.innerHTML = sorted.map((art, index) => `
+                <div class="flex items-center space-x-3 cursor-pointer group p-2 rounded-xl hover:bg-earth-50 transition" onclick="openArticleModal(${art.id})">
+                    <div class="relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-stone-200">
+                        <img src="${art.image}" 
+                             alt="${art.title}" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                        <span class="absolute top-1 left-1 bg-forest-900/80 text-sand text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">
+                            ${index + 1}
+                        </span>
+                    </div>
+                    <div class="flex-grow min-w-0">
+                        <h4 class="text-xs font-bold text-stone-800 group-hover:text-earth-700 transition line-clamp-2 leading-tight">
+                            ${art.title}
+                        </h4>
+                        <span class="text-[10px] text-stone-400 mt-1 block">${art.date}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // EVENTOS E FILTROS
+        function setupEvents() {
+            document.getElementById('searchInput').addEventListener('input', (e) => {
+                searchQuery = e.target.value;
+                renderPosts();
+            });
+
+            document.getElementById('mobileSearchInput').addEventListener('input', (e) => {
+                searchQuery = e.target.value;
+                renderPosts();
+            });
+
+            const mobileBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    document.querySelectorAll('.nav-link').forEach(l => {
+                        l.classList.remove('text-sand', 'border-earth-300');
+                        l.classList.add('text-stone-300', 'border-transparent');
+                    });
+                    link.classList.remove('text-stone-300', 'border-transparent');
+                    link.classList.add('text-sand', 'border-earth-300');
+                    
+                    currentCategory = link.getAttribute('data-category');
+                    updateSectionTitle();
+                    renderPosts();
+                });
+            });
+
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentCategory = link.getAttribute('data-category');
+                    mobileMenu.classList.add('hidden');
+                    updateSectionTitle();
+                    renderPosts();
+                });
+            });
+        }
+
+        function updateSectionTitle() {
+            const titleEl = document.getElementById('sectionTitle');
+            if(currentCategory === 'todos') {
+                titleEl.innerHTML = `<i class="fa-solid fa-feather-pointed text-earth-600 mr-2 text-xl"></i> Últimas Publicações`;
+            } else {
+                titleEl.innerHTML = `<i class="fa-solid fa-folder-open text-earth-600 mr-2 text-xl"></i> ${currentCategory}`;
+            }
+        }
+
+        function resetFilters() {
+            currentCategory = 'todos';
+            searchQuery = '';
+            document.getElementById('searchInput').value = '';
+            document.getElementById('mobileSearchInput').value = '';
+            updateSectionTitle();
+            renderPosts();
+        }
+
+        function openArticleModal(id) {
+            const article = articles.find(a => a.id === id);
+            if (!article) return;
+
+            document.getElementById('modalImage').src = article.image;
+            document.getElementById('modalCategory').textContent = article.category;
+            document.getElementById('modalTitle').textContent = article.title;
+            document.getElementById('modalAuthor').textContent = article.author;
+            document.getElementById('modalAuthorAvatar').textContent = article.authorInitials;
+            document.getElementById('modalDate').textContent = article.date;
+            document.getElementById('modalReadTime').textContent = article.readTime + ' de leitura';
+            document.getElementById('modalBody').innerHTML = article.content;
+
+            const modal = document.getElementById('articleModal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeArticleModal() {
+            const modal = document.getElementById('articleModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function shareArticle() {
+            const dummy = document.createElement('input');
+            document.body.appendChild(dummy);
+            dummy.value = window.location.href;
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+            
+            const btn = event.currentTarget;
+            btn.innerHTML = `<i class="fa-solid fa-check text-green-600"></i>`;
+            setTimeout(() => {
+                btn.innerHTML = `<i class="fa-solid fa-link"></i>`;
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
