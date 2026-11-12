@@ -96,13 +96,16 @@
                     </div>
                 </a>
 
-                <!-- Navegação Desktop -->
-                <nav class="hidden md:flex space-x-8 text-sm font-medium">
-                    <a href="#" class="nav-link text-sand hover:text-earth-300 transition py-1 border-b-2 border-earth-300" data-category="todos">Início</a>
-                    <a href="#" class="nav-link text-stone-300 hover:text-earth-300 transition py-1 border-b-2 border-transparent" data-category="Ecologia & Território">Ecologia & Território</a>
-                    <a href="#" class="nav-link text-stone-300 hover:text-earth-300 transition py-1 border-b-2 border-transparent" data-category="Arte & Design">Arte & Arquitetura</a>
-                    <a href="#" class="nav-link text-stone-300 hover:text-earth-300 transition py-1 border-b-2 border-transparent" data-category="Línguas & Tradições">Música & Tradições</a>
-                    <a href="#" class="nav-link text-stone-300 hover:text-earth-300 transition py-1 border-b-2 border-transparent" data-category="História">História & Ciência</a>
+                <!-- Navegação Desktop por Autores -->
+                <nav class="hidden xl:flex space-x-5 text-xs font-medium overflow-x-auto py-2">
+                    <a href="#" class="nav-link text-sand hover:text-earth-300 transition py-1 border-b-2 border-earth-300 whitespace-nowrap" data-author="todos">Todos</a>
+                    <a href="#" class="nav-link text-stone-300 hover:text-earth-300 transition py-1 border-b-2 border-transparent whitespace-nowrap" data-author="Sônia Guajajara">Sônia Guajajara</a>
+                    <a href="#" class="nav-link text-stone-300 hover:text-earth-300 transition py-1 border-b-2 border-transparent whitespace-nowrap" data-author="Jaider Esbell">Jaider Esbell</a>
+                    <a href="#" class="nav-link text-stone-300 hover:text-earth-300 transition py-1 border-b-2 border-transparent whitespace-nowrap" data-author="Alisson Pankararu">Alisson Pankararu</a>
+                    <a href="#" class="nav-link text-stone-300 hover:text-earth-300 transition py-1 border-b-2 border-transparent whitespace-nowrap" data-author="Maybí Machacalis">Maybí Machacalis</a>
+                    <a href="#" class="nav-link text-stone-300 hover:text-earth-300 transition py-1 border-b-2 border-transparent whitespace-nowrap" data-author="Tuiré Kayapó">Tuiré Kayapó</a>
+                    <a href="#" class="nav-link text-stone-300 hover:text-earth-300 transition py-1 border-b-2 border-transparent whitespace-nowrap" data-author="Samela Sateré-Mawé">Samela Sateré-Mawé</a>
+                    <a href="#" class="nav-link text-stone-300 hover:text-earth-300 transition py-1 border-b-2 border-transparent whitespace-nowrap" data-author="Jerá Guarani">Jerá Guarani</a>
                 </nav>
 
                 <!-- Barra de Pesquisa e Menu Mobile Button -->
@@ -114,24 +117,27 @@
                     </div>
 
                     <!-- Botão Menu Mobile -->
-                    <button id="mobileMenuBtn" class="md:hidden text-sand hover:text-earth-300 focus:outline-none p-2">
+                    <button id="mobileMenuBtn" class="xl:hidden text-sand hover:text-earth-300 focus:outline-none p-2">
                         <i class="fa-solid fa-bars text-xl"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- Menu Mobile Expandível -->
-        <div id="mobileMenu" class="hidden md:hidden bg-forest-800 border-t border-forest-700 px-4 pt-2 pb-4 space-y-2">
+        <!-- Menu Mobile Expandível por Autores -->
+        <div id="mobileMenu" class="hidden xl:hidden bg-forest-800 border-t border-forest-700 px-4 pt-2 pb-4 space-y-2">
             <div class="mb-3 pt-2">
                 <input type="text" id="mobileSearchInput" placeholder="Buscar no blog..." 
                        class="w-full bg-forest-900 text-sand text-sm rounded-lg pl-9 pr-4 py-2 border border-forest-700 focus:outline-none focus:ring-1 focus:ring-earth-600">
             </div>
-            <a href="#" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-sand hover:bg-forest-700" data-category="todos">Início</a>
-            <a href="#" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-stone-300 hover:bg-forest-700" data-category="Ecologia & Território">Ecologia & Território</a>
-            <a href="#" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-stone-300 hover:bg-forest-700" data-category="Arte & Design">Arte & Arquitetura</a>
-            <a href="#" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-stone-300 hover:bg-forest-700" data-category="Línguas & Tradições">Música & Tradições</a>
-            <a href="#" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-stone-300 hover:bg-forest-700" data-category="História">História & Ciência</a>
+            <a href="#" class="mobile-nav-link block px-3 py-2 rounded-md text-sm font-medium text-sand hover:bg-forest-700" data-author="todos">Todos os Autores</a>
+            <a href="#" class="mobile-nav-link block px-3 py-2 rounded-md text-sm font-medium text-stone-300 hover:bg-forest-700" data-author="Sônia Guajajara">Sônia Guajajara</a>
+            <a href="#" class="mobile-nav-link block px-3 py-2 rounded-md text-sm font-medium text-stone-300 hover:bg-forest-700" data-author="Jaider Esbell">Jaider Esbell</a>
+            <a href="#" class="mobile-nav-link block px-3 py-2 rounded-md text-sm font-medium text-stone-300 hover:bg-forest-700" data-author="Alisson Pankararu">Alisson Pankararu</a>
+            <a href="#" class="mobile-nav-link block px-3 py-2 rounded-md text-sm font-medium text-stone-300 hover:bg-forest-700" data-author="Maybí Machacalis">Maybí Machacalis</a>
+            <a href="#" class="mobile-nav-link block px-3 py-2 rounded-md text-sm font-medium text-stone-300 hover:bg-forest-700" data-author="Tuiré Kayapó">Tuiré Kayapó</a>
+            <a href="#" class="mobile-nav-link block px-3 py-2 rounded-md text-sm font-medium text-stone-300 hover:bg-forest-700" data-author="Samela Sateré-Mawé">Samela Sateré-Mawé</a>
+            <a href="#" class="mobile-nav-link block px-3 py-2 rounded-md text-sm font-medium text-stone-300 hover:bg-forest-700" data-author="Jerá Guarani">Jerá Guarani</a>
         </div>
     </header>
 
@@ -151,7 +157,6 @@
                     </span>
                 </div>
                 
-                <!-- Info do Hero -->
                 <div class="lg:col-span-5 p-6 sm:p-8 lg:p-10 flex flex-col justify-between bg-stone-900">
                     <div>
                         <div class="flex items-center space-x-3 text-xs text-earth-300 mb-3">
@@ -190,10 +195,11 @@
             
             <!-- LISTA DE ARTIGOS (GRID) -->
             <section class="lg:col-span-8">
+                
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-earth-200 gap-4">
                     <h2 id="sectionTitle" class="font-title text-2xl font-bold text-forest-900 flex items-center">
                         <i class="fa-solid fa-feather-pointed text-earth-600 mr-2 text-xl"></i>
-                        Últimas Publicações
+                        Todas as Publicações
                     </h2>
                     <span id="resultsCount" class="text-xs text-stone-500 font-medium">Exibindo todos os artigos</span>
                 </div>
@@ -203,15 +209,28 @@
                 <div id="emptyState" class="hidden text-center py-12 bg-white rounded-2xl shadow-sm border border-earth-100 p-6">
                     <i class="fa-solid fa-compass text-4xl text-earth-300 mb-3"></i>
                     <h3 class="font-title text-lg font-bold text-stone-700">Nenhum artigo encontrado</h3>
-                    <p class="text-sm text-stone-500 mt-1">Tente pesquisar por outros termos ou escolha outra categoria.</p>
+                    <p class="text-sm text-stone-500 mt-1">Este autor ainda não possui artigos publicados ou o termo buscado não foi encontrado.</p>
                     <button onclick="resetFilters()" class="mt-4 px-4 py-2 bg-forest-700 text-sand text-xs font-semibold rounded-lg hover:bg-forest-800 transition">
                         Limpar Filtros
                     </button>
                 </div>
             </section>
 
-            <!-- BARRA LATERAL (SIDEBAR) - Apenas Mais Lidos -->
+            <!-- BARRA LATERAL (SIDEBAR) -->
             <aside class="lg:col-span-4 space-y-8">
+                
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-earth-200 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-earth-100 rounded-full -mr-8 -mt-8 opacity-50"></div>
+                    <h3 class="font-title text-xl font-bold text-forest-900 mb-3 relative">Sobre o Blog</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed mb-4 relative">
+                        O <strong class="text-earth-700">Vozes da Terra</strong> é um espaço dedicado à difusão da memória, saberes, arte e lutas dos povos originários do Brasil através de seus próprios autores.
+                    </p>
+                    <div class="flex items-center space-x-3 text-forest-800 pt-2 border-t border-earth-100 text-xs font-medium">
+                        <i class="fa-solid fa-tree text-earth-600"></i>
+                        <span>Autoria Indígena • Memória • Voz</span>
+                    </div>
+                </div>
+
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-earth-200">
                     <h3 class="font-title text-lg font-bold text-forest-900 mb-4 pb-2 border-b border-earth-100 flex items-center">
                         <i class="fa-solid fa-fire text-earth-600 mr-2"></i>
@@ -219,6 +238,7 @@
                     </h3>
                     <div class="space-y-4" id="popularPostsContainer"></div>
                 </div>
+
             </aside>
         </div>
     </main>
@@ -272,7 +292,6 @@
 
     <!-- JAVASCRIPT LÓGICA DO BLOG -->
     <script>
-        // BASE DE DADOS DOS ARTIGOS COM AS FOTOS ORIGINAIS
         const articles = [
             {
                 id: 0,
@@ -283,16 +302,10 @@
                 authorInitials: "SG",
                 readTime: "7 min",
                 image: "https://ispn.org.br/wp-content/uploads/2019/12/KRAHO_A_39274.jpg",
-                fallbackImg: "https://ispn.org.br/wp-content/uploads/2019/12/KRAHO_A_39274.jpg",
                 excerpt: "Como o trabalho artesanal sustentável com palhas nativas, o manejo tradicional do solo e a vigilância constante dos territórios mantêm as florestas nativas vivas e protegidas.",
                 content: `
-                    <p class="font-medium text-stone-800 text-base">A preservação dos biomas brasileiros está intrinsecamente ligada ao reconhecimento e à garantia dos direitos territoriais dos povos indígenas. Dados de monitoramento por satélite confirmam que as terras indígenas possuem as menores taxas de queimadas e desmatamento do continente.</p>
-                    <p>Nas comunidades do Cerrado e da Amazônia, a colheita de fibras, sementes e palhas para artesanato e moradia ocorre em harmonia com as estações climáticas, permitindo a regeneração contínua da vegetação nativa sem degradar o solo.</p>
-                    <h3 class="font-title text-xl font-bold text-forest-900 mt-6 mb-2">Conhecimento Científico e Tradição Oral</h3>
-                    <p>A sinergia entre o saber técnico e as tecnologias sociais indígenas possibilita restaurar áreas degradadas e proteger nascentes cruciais para as bacias hidrográficas nacionais.</p>
-                    <blockquote class="border-l-4 border-earth-600 pl-4 my-4 italic text-stone-700 bg-earth-50 py-2 rounded-r">
-                        "Proteger a terra não é apenas defender um espaço físico, é salvaguardar um acervo vivo de ciências, cosmologias e biodiversidade para as próximas gerações."
-                    </blockquote>
+                    <p class="font-medium text-stone-800 text-base">A preservação dos biomas brasileiros está intrinsecamente ligada ao reconhecimento e à garantia dos direitos territoriais dos povos indígenas.</p>
+                    <p>Nas comunidades do Cerrado e da Amazônia, a colheita de fibras e sementes ocorre em harmonia com as estações climáticas.</p>
                 `,
                 views: 2450
             },
@@ -305,43 +318,39 @@
                 authorInitials: "JE",
                 readTime: "5 min",
                 image: "https://s2-casaejardim.glbimg.com/r_JlzzT_myYPM8DWtImsEUhW1ms=/0x0:1400x1050/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_a0b7e59562ef42049f4e191fe476fe7d/internal_photos/bs/2026/R/K/fKAuZdQASuNlc8RC9cVg/oca-ponta-de-pedras-santarem-1-.jpg",
-                fallbackImg: "https://s2-casaejardim.glbimg.com/r_JlzzT_myYPM8DWtImsEUhW1ms=/0x0:1400x1050/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_a0b7e59562ef42049f4e191fe476fe7d/internal_photos/bs/2026/R/K/fKAuZdQASuNlc8RC9cVg/oca-ponta-de-pedras-santarem-1-.jpg",
                 excerpt: "Conheça as soluções de arquitetura bioclimática, estrutura circular em madeira e coberturas de palha aplicadas nas habitações tradicionais.",
                 content: `
-                    <p>Muito antes dos conceitos modernos de arquitetura bioclimática surgirem, as sociedades indígenas já dominavam técnicas avançadas de construção comunitária perfeitamente integradas ao ecossistema local.</p>
-                    <p>As ocas e malocas redondas utilizam vigas de madeira nativa e coberturas de palha entrelaçada que mantêm o ambiente interno fresco e ventilado mesmo durante o calor intenso.</p>
+                    <p>Muito antes dos conceitos modernos de arquitetura bioclimática surgirem, as sociedades indígenas já dominavam técnicas avançadas de construção comunitária.</p>
                 `,
                 views: 1820
             },
             {
                 id: 2,
                 title: "A Música e os Instrumentos Sagrados: Dos Chocalhos Maracás aos Torés da Mata",
-                category: "Línguas & Tradições",
+                category: "Música & Tradições",
                 date: "07 de Nov, 2026",
                 author: "Alisson Pankararu",
                 authorInitials: "AP",
                 readTime: "4 min",
                 image: "https://cdn-blog.superprof.com/blog_br/wp-content/uploads/2026/01/chocalho-indigena-flauta-indigena.jpg",
-                fallbackImg: "https://cdn-blog.superprof.com/blog_br/wp-content/uploads/2026/01/chocalho-indigena-flauta-indigena.jpg",
                 excerpt: "As frequências sonoras, maracás de cabaça, flautas e percussão de madeira como pilares da espiritualidade, rituais e celebração.",
                 content: `
-                    <p>A sonoridade nas aldeias indígenas conecta o ambiente natural aos cantos de celebração e cura. O maracá, confeccionado com cabaças e sementes nativas, cria o ritmo fundamental que guia a dança do Toré.</p>
+                    <p>A sonoridade nas aldeias indígenas conecta o ambiente natural aos cantos de celebração e cura através do maracá e do Toré.</p>
                 `,
                 views: 1540
             },
             {
                 id: 3,
                 title: "Astronomia Indígena: O Céu Tupi-Guarani e as Constelações do Cruzeiro do Sul",
-                category: "História",
+                category: "História & Ciência",
                 date: "05 de Nov, 2026",
-                author: "Maybi Machacalis",
+                author: "Maybí Machacalis",
                 authorInitials: "MM",
                 readTime: "6 min",
                 image: "https://invivo.fiocruz.br/wp-content/uploads/2023/08/tupi-guarani2.jpg",
-                fallbackImg: "https://invivo.fiocruz.br/wp-content/uploads/2023/08/tupi-guarani2.jpg",
                 excerpt: "Como a observação minuciosa do céu noturno e das manchas escuras da Via Láctea guia os períodos de plantio, pesca e celebrações.",
                 content: `
-                    <p>A observação astronômica ancestral não se limitava aos pontos brilhantes das estrelas, mas incorporava a leitura das nuvens de poeira cósmica da Via Láctea. Constelações como a Ema e o Homem Velho serviam como calendário preciso.</p>
+                    <p>A observação astronômica ancestral incorporava a leitura das nuvens de poeira cósmica da Via Láctea como calendário preciso.</p>
                 `,
                 views: 1980
             },
@@ -354,48 +363,45 @@
                 authorInitials: "TK",
                 readTime: "5 min",
                 image: "https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/latin-america/kabure-portada-min.jpg?crop=0%2C96%2C4608%2C2880&wid=640&hei=400&scl=7.2",
-                fallbackImg: "https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/latin-america/kabure-portada-min.jpg?crop=0%2C96%2C4608%2C2880&wid=640&hei=400&scl=7.2",
                 excerpt: "Modelos de extrativismo comunitário que mantêm a floresta de pé enquanto geram renda cooperativa sustentável.",
                 content: `
-                    <p>A coleta comunitária da castanha-do-pará e do açaí demonstra na prática como o manejo consciente dos recursos florestais impulsiona economias vivas sem destruir os ecossistemas nativos.</p>
+                    <p>A coleta comunitária da castanha-do-pará e do açaí demonstra na prática como o manejo consciente impulsiona economias vivas.</p>
                 `,
                 views: 1410
             },
             {
                 id: 5,
                 title: "Literatura Indígena Contemporânea: A Voz de Autores da Terra nas Livrarias",
-                category: "História",
+                category: "História & Ciência",
                 date: "01 de Nov, 2026",
                 author: "Samela Sateré-Mawé",
-                authorInitials: "SS",
+                authorInitials: "SSM",
                 readTime: "5 min",
                 image: "https://images.educamaisbrasil.com.br/content/noticias/6-livros-de-autores-da-literatura-indigena-para-ler-no-dia-do-escritor_g.jpg",
-                fallbackImg: "https://images.educamaisbrasil.com.br/content/noticias/6-livros-de-autores-da-literatura-indigena-para-ler-no-dia-do-escritor_g.jpg",
                 excerpt: "A ascensão de escritoras e pensadores indígenas ampliando narrativas, memórias e poesias nas livrarias do Brasil.",
                 content: `
-                    <p>A literatura escrita por autores originários amplia a voz das tradições orais para o universo impresso, conquistando leitoras e leitores de todas as idades através de poesia, filosofia e romances potentes.</p>
+                    <p>A literatura escrita por autores originários amplia a voz das tradições orais para o universo impresso.</p>
                 `,
                 views: 1610
             },
             {
                 id: 6,
                 title: "Jogos dos Povos Indígenas: Esporte, Identidade e Celebração Intercultural",
-                category: "Línguas & Tradições",
+                category: "Música & Tradições",
                 date: "28 de Out, 2026",
                 author: "Jerá Guarani",
                 authorInitials: "JG",
                 readTime: "4 min",
                 image: "https://imagens.ebc.com.br/ZsnE1epccvRDg8bmhrlggWEdeZo=/1170x700/smart/https://agenciabrasil.ebc.com.br/sites/default/files/atoms/image/jogos_indigenas_1.jpg?itok=d4fZ8zz9",
-                fallbackImg: "https://imagens.ebc.com.br/ZsnE1epccvRDg8bmhrlggWEdeZo=/1170x700/smart/https://agenciabrasil.ebc.com.br/sites/default/files/atoms/image/jogos_indigenas_1.jpg?itok=d4fZ8zz9",
                 excerpt: "Modalidades esportivas como corrida de tora, arco e flecha e futebol de cabeça unindo centenas de etnias em celebração.",
                 content: `
-                    <p>A corrida com tora de buriti exige força física, coordenação em equipe e celebração comunitária, destacando a importância dos esportes tradicionais para o fortalecimento da identidade indígena.</p>
+                    <p>A corrida com tora de buriti exige força física, coordenação em equipe e celebração comunitária entre os povos.</p>
                 `,
                 views: 1250
             }
         ];
 
-        let currentCategory = 'todos';
+        let currentAuthor = 'todos';
         let searchQuery = '';
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -421,10 +427,11 @@
             const resultsCount = document.getElementById('resultsCount');
 
             let filtered = articles.filter(art => {
-                const matchCategory = currentCategory === 'todos' || art.category === currentCategory;
+                const matchAuthor = currentAuthor === 'todos' || art.author === currentAuthor;
                 const matchSearch = art.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                                    art.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
-                return matchCategory && matchSearch;
+                                    art.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                                    art.author.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchAuthor && matchSearch;
             });
 
             resultsCount.textContent = `Exibindo ${filtered.length} artigo(s)`;
@@ -498,7 +505,7 @@
                         <h4 class="text-xs font-bold text-stone-800 group-hover:text-earth-700 transition line-clamp-2 leading-tight">
                             ${art.title}
                         </h4>
-                        <span class="text-[10px] text-stone-400 mt-1 block">${art.date}</span>
+                        <span class="text-[10px] text-stone-400 mt-1 block">${art.author}</span>
                     </div>
                 </div>
             `).join('');
@@ -531,7 +538,7 @@
                     link.classList.remove('text-stone-300', 'border-transparent');
                     link.classList.add('text-sand', 'border-earth-300');
                     
-                    currentCategory = link.getAttribute('data-category');
+                    currentAuthor = link.getAttribute('data-author');
                     updateSectionTitle();
                     renderPosts();
                 });
@@ -540,7 +547,7 @@
             document.querySelectorAll('.mobile-nav-link').forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
-                    currentCategory = link.getAttribute('data-category');
+                    currentAuthor = link.getAttribute('data-author');
                     mobileMenu.classList.add('hidden');
                     updateSectionTitle();
                     renderPosts();
@@ -550,15 +557,15 @@
 
         function updateSectionTitle() {
             const titleEl = document.getElementById('sectionTitle');
-            if(currentCategory === 'todos') {
-                titleEl.innerHTML = `<i class="fa-solid fa-feather-pointed text-earth-600 mr-2 text-xl"></i> Últimas Publicações`;
+            if(currentAuthor === 'todos') {
+                titleEl.innerHTML = `<i class="fa-solid fa-feather-pointed text-earth-600 mr-2 text-xl"></i> Todas as Publicações`;
             } else {
-                titleEl.innerHTML = `<i class="fa-solid fa-folder-open text-earth-600 mr-2 text-xl"></i> ${currentCategory}`;
+                titleEl.innerHTML = `<i class="fa-solid fa-feather text-earth-600 mr-2 text-xl"></i> Artigos por ${currentAuthor}`;
             }
         }
 
         function resetFilters() {
-            currentCategory = 'todos';
+            currentAuthor = 'todos';
             searchQuery = '';
             document.getElementById('searchInput').value = '';
             document.getElementById('mobileSearchInput').value = '';
