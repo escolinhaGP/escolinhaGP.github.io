@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vozes da Terra: Povos Indígenas!</title>
+    <title>Vozes da Terra | Blog dos Povos Indígenas</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
@@ -272,38 +272,7 @@
 
     <!-- JAVASCRIPT LÓGICA DO BLOG -->
     <script>
-        const generateCerradoHeroImg = () => {
-            const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="1000" height="650">
-                <defs>
-                    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stop-color="#8BB8A8"/>
-                        <stop offset="60%" stop-color="#CFDFD5"/>
-                        <stop offset="100%" stop-color="#E8E4D5"/>
-                    </linearGradient>
-                    <linearGradient id="ground" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stop-color="#C58552"/>
-                        <stop offset="100%" stop-color="#8C4E28"/>
-                    </linearGradient>
-                </defs>
-                <rect width="1000" height="650" fill="url(#sky)"/>
-                <rect y="320" width="1000" height="330" fill="url(#ground)"/>
-            </svg>`;
-            return 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svg)));
-        };
-
-        const generateSvgArt = (color1, color2, text) => {
-            const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
-                <rect width="800" height="500" fill="${color1}"/>
-                <circle cx="400" cy="250" r="180" fill="${color2}" opacity="0.3"/>
-                <path d="M 0 400 Q 200 300 400 400 T 800 400 L 800 500 L 0 500 Z" fill="${color2}" opacity="0.6"/>
-                <text x="50%" y="48%" dominant-baseline="middle" text-anchor="middle" font-family="Playfair Display, serif" font-size="34" font-weight="bold" fill="#F5F2EB">${text}</text>
-            </svg>`;
-            return 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svg)));
-        };
-
-        const cerradoHeroImageBase64 = generateCerradoHeroImg();
-
-        // BASE DE DADOS DOS ARTIGOS
+        // BASE DE DADOS DOS ARTIGOS COM AS FOTOS ORIGINAIS
         const articles = [
             {
                 id: 0,
@@ -313,8 +282,8 @@
                 author: "Sônia Guajajara",
                 authorInitials: "SG",
                 readTime: "7 min",
-                image: cerradoHeroImageBase64,
-                fallbackImg: cerradoHeroImageBase64,
+                image: "https://ispn.org.br/wp-content/uploads/2019/12/KRAHO_A_39274.jpg",
+                fallbackImg: "https://ispn.org.br/wp-content/uploads/2019/12/KRAHO_A_39274.jpg",
                 excerpt: "Como o trabalho artesanal sustentável com palhas nativas, o manejo tradicional do solo e a vigilância constante dos territórios mantêm as florestas nativas vivas e protegidas.",
                 content: `
                     <p class="font-medium text-stone-800 text-base">A preservação dos biomas brasileiros está intrinsecamente ligada ao reconhecimento e à garantia dos direitos territoriais dos povos indígenas. Dados de monitoramento por satélite confirmam que as terras indígenas possuem as menores taxas de queimadas e desmatamento do continente.</p>
@@ -335,8 +304,8 @@
                 author: "Jaider Esbell",
                 authorInitials: "JE",
                 readTime: "5 min",
-                image: generateSvgArt('#2d6a4f', '#9b5b35', 'Arquitetura Ancestral'),
-                fallbackImg: generateSvgArt('#2d6a4f', '#9b5b35', 'Arquitetura Ancestral'),
+                image: "https://s2-casaejardim.glbimg.com/r_JlzzT_myYPM8DWtImsEUhW1ms=/0x0:1400x1050/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_a0b7e59562ef42049f4e191fe476fe7d/internal_photos/bs/2026/R/K/fKAuZdQASuNlc8RC9cVg/oca-ponta-de-pedras-santarem-1-.jpg",
+                fallbackImg: "https://s2-casaejardim.glbimg.com/r_JlzzT_myYPM8DWtImsEUhW1ms=/0x0:1400x1050/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_a0b7e59562ef42049f4e191fe476fe7d/internal_photos/bs/2026/R/K/fKAuZdQASuNlc8RC9cVg/oca-ponta-de-pedras-santarem-1-.jpg",
                 excerpt: "Conheça as soluções de arquitetura bioclimática, estrutura circular em madeira e coberturas de palha aplicadas nas habitações tradicionais.",
                 content: `
                     <p>Muito antes dos conceitos modernos de arquitetura bioclimática surgirem, as sociedades indígenas já dominavam técnicas avançadas de construção comunitária perfeitamente integradas ao ecossistema local.</p>
@@ -352,8 +321,8 @@
                 author: "Alisson Pankararu",
                 authorInitials: "AP",
                 readTime: "4 min",
-                image: generateSvgArt('#80482b', '#1e523b', 'Sons & Tradição'),
-                fallbackImg: generateSvgArt('#80482b', '#1e523b', 'Sons & Tradição'),
+                image: "https://cdn-blog.superprof.com/blog_br/wp-content/uploads/2026/01/chocalho-indigena-flauta-indigena.jpg",
+                fallbackImg: "https://cdn-blog.superprof.com/blog_br/wp-content/uploads/2026/01/chocalho-indigena-flauta-indigena.jpg",
                 excerpt: "As frequências sonoras, maracás de cabaça, flautas e percussão de madeira como pilares da espiritualidade, rituais e celebração.",
                 content: `
                     <p>A sonoridade nas aldeias indígenas conecta o ambiente natural aos cantos de celebração e cura. O maracá, confeccionado com cabaças e sementes nativas, cria o ritmo fundamental que guia a dança do Toré.</p>
@@ -368,8 +337,8 @@
                 author: "Maybi Machacalis",
                 authorInitials: "MM",
                 readTime: "6 min",
-                image: generateSvgArt('#0f291e', '#C86D3B', 'Astronomia Ancestral'),
-                fallbackImg: generateSvgArt('#0f291e', '#C86D3B', 'Astronomia Ancestral'),
+                image: "https://invivo.fiocruz.br/wp-content/uploads/2023/08/tupi-guarani2.jpg",
+                fallbackImg: "https://invivo.fiocruz.br/wp-content/uploads/2023/08/tupi-guarani2.jpg",
                 excerpt: "Como a observação minuciosa do céu noturno e das manchas escuras da Via Láctea guia os períodos de plantio, pesca e celebrações.",
                 content: `
                     <p>A observação astronômica ancestral não se limitava aos pontos brilhantes das estrelas, mas incorporava a leitura das nuvens de poeira cósmica da Via Láctea. Constelações como a Ema e o Homem Velho serviam como calendário preciso.</p>
@@ -384,8 +353,8 @@
                 author: "Tuiré Kayapó",
                 authorInitials: "TK",
                 readTime: "5 min",
-                image: generateSvgArt('#1e523b', '#b87348', 'Bioeconomia'),
-                fallbackImg: generateSvgArt('#1e523b', '#b87348', 'Bioeconomia'),
+                image: "https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/latin-america/kabure-portada-min.jpg?crop=0%2C96%2C4608%2C2880&wid=640&hei=400&scl=7.2",
+                fallbackImg: "https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/latin-america/kabure-portada-min.jpg?crop=0%2C96%2C4608%2C2880&wid=640&hei=400&scl=7.2",
                 excerpt: "Modelos de extrativismo comunitário que mantêm a floresta de pé enquanto geram renda cooperativa sustentável.",
                 content: `
                     <p>A coleta comunitária da castanha-do-pará e do açaí demonstra na prática como o manejo consciente dos recursos florestais impulsiona economias vivas sem destruir os ecossistemas nativos.</p>
@@ -400,8 +369,8 @@
                 author: "Samela Sateré-Mawé",
                 authorInitials: "SS",
                 readTime: "5 min",
-                image: generateSvgArt('#9b5b35', '#0f291e', 'Literatura da Terra'),
-                fallbackImg: generateSvgArt('#9b5b35', '#0f291e', 'Literatura da Terra'),
+                image: "https://images.educamaisbrasil.com.br/content/noticias/6-livros-de-autores-da-literatura-indigena-para-ler-no-dia-do-escritor_g.jpg",
+                fallbackImg: "https://images.educamaisbrasil.com.br/content/noticias/6-livros-de-autores-da-literatura-indigena-para-ler-no-dia-do-escritor_g.jpg",
                 excerpt: "A ascensão de escritoras e pensadores indígenas ampliando narrativas, memórias e poesias nas livrarias do Brasil.",
                 content: `
                     <p>A literatura escrita por autores originários amplia a voz das tradições orais para o universo impresso, conquistando leitoras e leitores de todas as idades através de poesia, filosofia e romances potentes.</p>
@@ -416,8 +385,8 @@
                 author: "Jerá Guarani",
                 authorInitials: "JG",
                 readTime: "4 min",
-                image: generateSvgArt('#2d6a4f', '#C86D3B', 'Jogos Indígenas'),
-                fallbackImg: generateSvgArt('#2d6a4f', '#C86D3B', 'Jogos Indígenas'),
+                image: "https://imagens.ebc.com.br/ZsnE1epccvRDg8bmhrlggWEdeZo=/1170x700/smart/https://agenciabrasil.ebc.com.br/sites/default/files/atoms/image/jogos_indigenas_1.jpg?itok=d4fZ8zz9",
+                fallbackImg: "https://imagens.ebc.com.br/ZsnE1epccvRDg8bmhrlggWEdeZo=/1170x700/smart/https://agenciabrasil.ebc.com.br/sites/default/files/atoms/image/jogos_indigenas_1.jpg?itok=d4fZ8zz9",
                 excerpt: "Modalidades esportivas como corrida de tora, arco e flecha e futebol de cabeça unindo centenas de etnias em celebração.",
                 content: `
                     <p>A corrida com tora de buriti exige força física, coordenação em equipe e celebração comunitária, destacando a importância dos esportes tradicionais para o fortalecimento da identidade indígena.</p>
