@@ -292,115 +292,127 @@
 
     <!-- JAVASCRIPT LÓGICA DO BLOG -->
     <script>
-        const articles = [
-            {
-                id: 0,
-                title: "O Protagonismo Indígena na Conservação da Amazônia e do Cerrado",
-                category: "Ecologia & Território",
-                date: "11 de Nov, 2026",
-                author: "Sônia Guajajara",
-                authorInitials: "SG",
-                readTime: "7 min",
-                image: "https://ispn.org.br/wp-content/uploads/2019/12/KRAHO_A_39274.jpg",
-                excerpt: "Como o trabalho artesanal sustentável com palhas nativas, o manejo tradicional do solo e a vigilância constante dos territórios mantêm as florestas nativas vivas e protegidas.",
-                content: `
-                    <p class="font-medium text-stone-800 text-base">Quando falamos em salvar a Amazônia e o Cerrado, o debate costuma focar em leis ambientais, satélites e acordos internacionais, mas a solução mais eficaz está no chão da floresta e da savana: o protagonismo dos povos indígenas. Dados de monitoramento e relatórios da ONU confirmam que as terras indígenas são as áreas mais bem preservadas do planeta, registrando taxas de desmatamento drasticamente menores na Amazônia e protegendo as nascentes vitais que formam o berço das águas no Cerrado. Isso acontece porque, para os povos originários, a natureza não é um estoque de recursos para lucro imediato, mas uma extensão de sua própria vida, cultura e ancestralidade.</p>
-                    <p>Conservar não significa deixar a natureza intocada, mas saber conviver com ela por meio de tecnologias ambientais desenvolvidas.</p>
-                `,
-                views: 2450
-            },
-            {
-                id: 1,
-                title: "Arquitetura Ancestral: O Design e a Engenharia das Malocas e Ocas Tradicionais",
-                category: "Arte & Design",
-                date: "09 de Nov, 2026",
-                author: "Jaider Esbell",
-                authorInitials: "JE",
-                readTime: "5 min",
-                image: "https://s2-casaejardim.glbimg.com/r_JlzzT_myYPM8DWtImsEUhW1ms=/0x0:1400x1050/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_a0b7e59562ef42049f4e191fe476fe7d/internal_photos/bs/2026/R/K/fKAuZdQASuNlc8RC9cVg/oca-ponta-de-pedras-santarem-1-.jpg",
-                excerpt: "Conheça as soluções de arquitetura bioclimática, estrutura circular em madeira e coberturas de palha aplicadas nas habitações tradicionais.",
-                content: `
-                    <p>Muito antes de conceitos modernos como arquitetura bioclimática, sustentabilidade e eficiência energética ganharem destaque nas universidades, os povos originários já dominavam técnicas construtivas perfeitamente adaptadas aos ecossistemas brasileiros. As malocas e ocas tradicionais não são apenas abrigos rústicos; são verdadeiras obras de engenharia coletiva, onde cada encaixe de madeira, trançado de palha e orientação solar responde a uma lógica precisa de conforto térmico, resistência estrutural e organização social.</p>
-                     <p>A engenharia dessas construções começa na escolha e no preparo da matéria-prima extraída da própria floresta ou do cerrado, sem gerar resíduos industriais.</p>
-                `,
-                views: 1820
-            },
-            {
-                id: 2,
-                title: "A Música e os Instrumentos Sagrados: Dos Chocalhos Maracás aos Torés da Mata",
-                category: "Música & Tradições",
-                date: "07 de Nov, 2026",
-                author: "Alisson Pankararu",
-                authorInitials: "AP",
-                readTime: "4 min",
-                image: "https://cdn-blog.superprof.com/blog_br/wp-content/uploads/2026/01/chocalho-indigena-flauta-indigena.jpg",
-                excerpt: "As frequências sonoras, maracás de cabaça, flautas e percussão de madeira como pilares da espiritualidade, rituais e celebração.",
-                content: `
-                    <p>A sonoridade nas aldeias indígenas conecta o ambiente natural aos cantos de celebração e cura através do maracá e do Toré.</p>
-                `,
-                views: 1540
-            },
-            {
-                id: 3,
-                title: "Astronomia Indígena: O Céu Tupi-Guarani e as Constelações do Cruzeiro do Sul",
-                category: "História & Ciência",
-                date: "05 de Nov, 2026",
-                author: "Maybí Machacalis",
-                authorInitials: "MM",
-                readTime: "6 min",
-                image: "https://invivo.fiocruz.br/wp-content/uploads/2023/08/tupi-guarani2.jpg",
-                excerpt: "Como a observação minuciosa do céu noturno e das manchas escuras da Via Láctea guia os períodos de plantio, pesca e celebrações.",
-                content: `
-                    <p>A observação astronômica ancestral incorporava a leitura das nuvens de poeira cósmica da Via Láctea como calendário preciso.</p>
-                `,
-                views: 1980
-            },
-            {
-                id: 4,
-                title: "Bioeconomia Indígena: Manejo Sustentável do Açaí e da Castanha",
-                category: "Ecologia & Território",
-                date: "03 de Nov, 2026",
-                author: "Tuiré Kayapó",
-                authorInitials: "TK",
-                readTime: "5 min",
-                image: "https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/latin-america/kabure-portada-min.jpg?crop=0%2C96%2C4608%2C2880&wid=640&hei=400&scl=7.2",
-                excerpt: "Modelos de extrativismo comunitário que mantêm a floresta de pé enquanto geram renda cooperativa sustentável.",
-                content: `
-                    <p>A coleta comunitária da castanha-do-pará e do açaí demonstra na prática como o manejo consciente impulsiona economias vivas.</p>
-                `,
-                views: 1410
-            },
-            {
-                id: 5,
-                title: "Literatura Indígena Contemporânea: A Voz de Autores da Terra nas Livrarias",
-                category: "História & Ciência",
-                date: "01 de Nov, 2026",
-                author: "Samela Sateré-Mawé",
-                authorInitials: "SSM",
-                readTime: "5 min",
-                image: "https://images.educamaisbrasil.com.br/content/noticias/6-livros-de-autores-da-literatura-indigena-para-ler-no-dia-do-escritor_g.jpg",
-                excerpt: "A ascensão de escritoras e pensadores indígenas ampliando narrativas, memórias e poesias nas livrarias do Brasil.",
-                content: `
-                    <p>A literatura escrita por autores originários amplia a voz das tradições orais para o universo impresso.</p>
-                `,
-                views: 1610
-            },
-            {
-                id: 6,
-                title: "Jogos dos Povos Indígenas: Esporte, Identidade e Celebração Intercultural",
-                category: "Música & Tradições",
-                date: "28 de Out, 2026",
-                author: "Jerá Guarani",
-                authorInitials: "JG",
-                readTime: "4 min",
-                image: "https://imagens.ebc.com.br/ZsnE1epccvRDg8bmhrlggWEdeZo=/1170x700/smart/https://agenciabrasil.ebc.com.br/sites/default/files/atoms/image/jogos_indigenas_1.jpg?itok=d4fZ8zz9",
-                excerpt: "Modalidades esportivas como corrida de tora, arco e flecha e futebol de cabeça unindo centenas de etnias em celebração.",
-                content: `
-                    <p>A corrida com tora de buriti exige força física, coordenação em equipe e celebração comunitária entre os povos.</p>
-                `,
-                views: 1250
-            }
-        ];
+const articles = [
+    {
+        id: 0,
+        title: "O Protagonismo Indígena na Conservação da Amazônia e do Cerrado",
+        category: "Ecologia & Território",
+        date: "11 de Nov, 2026",
+        author: "Sônia Guajajara",
+        authorInitials: "SG",
+        readTime: "7 min",
+        image: "https://ispn.org.br/wp-content/uploads/2019/12/KRAHO_A_39274.jpg",
+        excerpt: "Como o trabalho artesanal sustentável com palhas nativas, o manejo tradicional do solo e a vigilância constante dos territórios mantêm as florestas nativas vivas e protegidas.",
+        content: `
+            <p class="font-medium text-stone-800 text-base">Quando falamos em salvar a Amazônia e o Cerrado, o debate costuma focar em leis ambientais, satélites e acordos internacionais, mas a solução mais eficaz está no chão da floresta e da savana: o protagonismo dos povos indígenas. Dados de monitoramento e relatórios da ONU confirmam que as terras indígenas são as áreas mais bem preservadas do planeta, registrando taxas de desmatamento drasticamente menores na Amazônia e protegendo as nascentes vitais que formam o berço das águas no Cerrado. Isso acontece porque, para os povos originários, a natureza não é um estoque de recursos para lucro imediato, mas uma extensão de sua própria vida, cultura e ancestralidade.</p>
+            <p>Conservar não significa deixar a natureza intocada, mas saber conviver com ela por meio de tecnologias ambientais desenvolvidas há séculos. No Cerrado, técnicas tradicionais de manejo integrado do fogo evitam incêndios catastróficos na época da seca, enquanto na Amazônia e nas savanas a agricultura, a caça e a pesca respeitam os ciclos de reprodução das espécies. Além disso, o cultivo e a seleção de sementes nativas garantem a regeneração contínua dos ecossistemas e protegem uma agrobiodiversidade hoje validada e admirada pela ciência moderna.</p>
+            <p>Apesar de funcionarem como verdadeiros escudos contra o colapso climático, esses guardiões enfrentam ameaças constantes, como o garimpo ilegal, a grilagem de terras e o avanço predatório ao redor de suas fronteiras. Fortalecer o protagonismo indígena exige, portanto, ações urgentes que vão desde garantir a demarcação e a fiscalização efetiva dos territórios até apoiar a bioeconomia da floresta em pé e incluir suas lideranças nas decisões políticas sobre o meio ambiente. Proteger os povos indígenas da Amazônia e do Cerrado é, na prática, garantir o futuro climático de toda a humanidade.</p>
+        `,
+        views: 2450
+    },
+    {
+        id: 1,
+        title: "Arquitetura Ancestral: O Design e a Engenharia das Malocas e Ocas Tradicionais",
+        category: "Arte & Design",
+        date: "09 de Nov, 2026",
+        author: "Jaider Esbell",
+        authorInitials: "JE",
+        readTime: "5 min",
+        image: "https://s2-casaejardim.glbimg.com/r_JlzzT_myYPM8DWtImsEUhW1ms=/0x0:1400x1050/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_a0b7e59562ef42049f4e191fe476fe7d/internal_photos/bs/2026/R/K/fKAuZdQASuNlc8RC9cVg/oca-ponta-de-pedras-santarem-1-.jpg",
+        excerpt: "Conheça as soluções de arquitetura bioclimática, estrutura circular em madeira e coberturas de palha aplicadas nas habitações tradicionais.",
+        content: `
+            <p class="font-medium text-stone-800 text-base">Muito antes de conceitos modernos como arquitetura bioclimática, sustentabilidade e eficiência energética ganharem destaque nas universidades, os povos originários já dominavam técnicas construtivas perfeitamente adaptadas aos ecossistemas brasileiros. As malocas e ocas tradicionais não são apenas abrigos rústicos; são verdadeiras obras de engenharia coletiva, onde cada encaixe de madeira, trançado de palha e orientação solar responde a uma lógica precisa de conforto térmico, resistência estrutural e organização social.</p>
+            <p>A engenharia dessas construções começa na escolha e no preparo da matéria-prima extraída da própria floresta ou do cerrado, sem gerar resíduos industriais. Troncos resistentes são curvados e unidos com amarrações de cipós naturais que dispensam pregos, criando estruturas flexíveis capazes de suportar ventos fortes. Já o formato arredondado e as espessas camadas de palha garantem isolamento térmico eficiente, bloqueando o calor intenso do dia e promovendo ventilação cruzada constante pelo pé-direito elevado.</p>
+            <p>Mais do que soluções técnicas, a arquitetura indígena reflete a cosmologia e o modo de vida comunitário de cada povo. Enquanto as ocas do Alto Xingu integram famílias extensas em ambientes amplos e sem divisórias, as malocas amazônicas organizam áreas privadas para redes e grandes pátios centrais voltados a rituais e decisões coletivas. Valorizar essa engenharia ancestral é reconhecer que o futuro da construção sustentável passa pela inteligência milenar dos povos originários.</p>
+        `,
+        views: 1820
+    },
+    {
+        id: 2,
+        title: "A Música e os Instrumentos Sagrados: Dos Chocalhos Maracás aos Torés da Mata",
+        category: "Música & Tradições",
+        date: "07 de Nov, 2026",
+        author: "Alisson Pankararu",
+        authorInitials: "AP",
+        readTime: "4 min",
+        image: "https://cdn-blog.superprof.com/blog_br/wp-content/uploads/2026/01/chocalho-indigena-flauta-indigena.jpg",
+        excerpt: "As frequências sonoras, maracás de cabaça, flautas e percussão de madeira como pilares da espiritualidade, rituais e celebração.",
+        content: `
+            <p class="font-medium text-stone-800 text-base">Na cultura dos povos indígenas do Brasil, a música nunca é mero entretenimento separado do cotidiano; ela é linguagem espiritual, memória histórica e ferramenta de cura. Dos chocalhos maracás esculpidos em cabaça aos cantos coletivos dos Torés do Nordeste, cada ritmo e frequência sonora estabelece uma ponte direta entre a comunidade, os encantados da natureza e a ancestralidade que habita as matas, os rios e as serras.</p>
+            <p>Os instrumentos sagrados são confeccionados com elementos vivos do território, carregando simbolismos profundos em cada detalhe. O maracá, preenchido com sementes nativas e adornado com grafismos e plumas, marca o pulso da terra e conduz as pisadas firmes durante os rituais. Flautas de taquara, apitos de osso ou madeira e tambores tradicionais dialogam com os sons da própria fauna, traduzindo a escuta atenta que os povos originários mantêm com o ambiente ao seu redor.</p>
+            <p>Participar de uma roda de Toré ou ouvir os cantos tradicionais é testemunhar a resistência viva de povos que preservaram suas identidades mesmo diante de séculos de tentativas de silenciamento. Através da voz e da percussão, os saberes são transmitidos aos mais jovens, fortalecendo os laços comunitários e reafirmando o direito sagrado à terra e à liberdade cultural.</p>
+        `,
+        views: 1540
+    },
+    {
+        id: 3,
+        title: "Astronomia Indígena: O Céu Tupi-Guarani e as Constelações do Cruzeiro do Sul",
+        category: "História & Ciência",
+        date: "05 de Nov, 2026",
+        author: "Maybí Machacalis",
+        authorInitials: "MM",
+        readTime: "6 min",
+        image: "https://invivo.fiocruz.br/wp-content/uploads/2023/08/tupi-guarani2.jpg",
+        excerpt: "Como a observação minuciosa do céu noturno e das manchas escuras da Via Láctea guia os períodos de plantio, pesca e celebrações.",
+        content: `
+            <p class="font-medium text-stone-800 text-base">Muito antes da chegada dos instrumentos ópticos europeus, os povos originários do Brasil já possuíam um sistema astronômico sofisticado, baseado na observação contínua e precisa da abóbada celeste. Para etnias como os Tupi-Guarani, o céu e a terra funcionam como espelhos interdependentes, onde o movimento das estrelas, das fases da Lua e da Via Láctea orienta diretamente o calendário agrícola, as épocas de caça e pesca e os grandes ciclos rituais.</p>
+            <p>Diferente da astronomia clássica ocidental, que liga apenas pontos luminosos para formar figuras, a astronomia indígena também lê as manchas escuras formadas pela poeira interestelar da Via Láctea. É nesse contraste entre luz e sombra que surgem constelações emblemáticas, como a Ema (Guyrá Nhandu), cujo surgimento no horizonte anuncia a chegada do inverno e o tempo certo para o preparo da terra, e o Homem Velho (Tuya), que sinaliza o início das chuvas e do verão.</p>
+            <p>Esse conhecimento milenar demonstra que ciência e espiritualidade caminham juntas na visão de mundo indígena. Ao olhar para o Cruzeiro do Sul ou acompanhar o nascimento helíaco das Plêiades, os sábios das aldeias leem um relógio cósmico vivo que garante o equilíbrio entre a produção de alimentos e a preservação dos ciclos naturais da floresta.</p>
+        `,
+        views: 1980
+    },
+    {
+        id: 4,
+        title: "Bioeconomia Indígena: Manejo Sustentável do Açaí e da Castanha",
+        category: "Ecologia & Território",
+        date: "03 de Nov, 2026",
+        author: "Tuiré Kayapó",
+        authorInitials: "TK",
+        readTime: "5 min",
+        image: "https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/latin-america/kabure-portada-min.jpg?crop=0%2C96%2C4608%2C2880&wid=640&hei=400&scl=7.2",
+        excerpt: "Modelos de extrativismo comunitário que mantêm a floresta de pé enquanto geram renda cooperativa sustentável.",
+        content: `
+            <p class="font-medium text-stone-800 text-base">Enquanto modelos econômicos predatórios insistem na derrubada da floresta para dar lugar a pastagens e monoculturas, a bioeconomia indígena comprova que a Amazônia vale muito mais em pé. Por meio de cooperativas comunitárias e redes de comércio justo, povos originários transformam frutos nativos como a castanha-do-pará, o açaí, o cumaru e o babaçu em fontes de renda dignas, garantindo autonomia financeira sem destruir uma única árvore.</p>
+            <p>O diferencial desse modelo está na forma como a coleta e o beneficiamento são conduzidos. Durante a safra da castanha ou do açaí, as famílias seguem regras tradicionais de manejo que respeitam o tempo de maturação dos frutos e deixam parte da produção para alimentar a fauna local, assegurando a dispersão natural das sementes e a regeneração contínua das matas. Todo o processo une saberes ancestrais de rastreamento na floresta com boas práticas modernas de higiene e rastreabilidade.</p>
+            <p>Investir e consumir produtos oriundos das cadeias produtivas indígenas significa fortalecer diretamente a proteção territorial. Quando as comunidades possuem meios sustentáveis para comercializar sua produção sem depender de atravessadores, toda a aldeia ganha ferramentas para defender suas fronteiras contra o garimpo e a exploração ilegal de madeira.</p>
+        `,
+        views: 1410
+    },
+    {
+        id: 5,
+        title: "Literatura Indígena Contemporânea: A Voz de Autores da Terra nas Livrarias",
+        category: "História & Ciência",
+        date: "01 de Nov, 2026",
+        author: "Samela Sateré-Mawé",
+        authorInitials: "SSM",
+        readTime: "5 min",
+        image: "https://images.educamaisbrasil.com.br/content/noticias/6-livros-de-autores-da-literatura-indigena-para-ler-no-dia-do-escritor_g.jpg",
+        excerpt: "A ascensão de escritoras e pensadores indígenas ampliando narrativas, memórias e poesias nas livrarias do Brasil.",
+        content: `
+            <p class="font-medium text-stone-800 text-base">Durante séculos, a história dos povos originários foi contada quase exclusivamente pelo olhar de cronistas, viajantes e pesquisadores não indígenas. Hoje, esse cenário passa por uma transformação profunda com a ascensão da literatura indígena contemporânea, movimento em que escritores, poetas e pensadores das mais diversas etnias assumem o protagonismo da palavra escrita para narrar suas próprias memórias, cosmovisões e lutas.</p>
+            <p>Longe de substituir a tradição oral — pilar fundamental das culturas originárias —, o livro tornou-se uma extensão estratégica da oralidade e uma ferramenta poderosa de diálogo intercultural. Autores como Daniel Munduruku, Eliane Potiguara, Ailton Krenak, Julie Dorrico e Márcia Wayna Kambeba levam às escolas e livrarias narrativas que rompem estereótipos coloniais, apresentando a riqueza filosófica, poética e política de mais de trezentos povos falantes de centenas de línguas no Brasil.</p>
+            <p>Ler literatura indígena é um convite urgente para ampliar o horizonte de compreensão sobre o país e sobre a própria relação da humanidade com a Terra. Ao ocupar espaços editoriais, feiras literárias e bibliotecas, esses autores garantem que as vozes da floresta e das aldeias ecoem com força e autenticidade para as futuras gerações.</p>
+        `,
+        views: 1610
+    },
+    {
+        id: 6,
+        title: "Jogos dos Povos Indígenas: Esporte, Identidade e Celebração Intercultural",
+        category: "Música & Tradições",
+        date: "28 de Out, 2026",
+        author: "Jerá Guarani",
+        authorInitials: "JG",
+        readTime: "4 min",
+        image: "https://imagens.ebc.com.br/ZsnE1epccvRDg8bmhrlggWEdeZo=/1170x700/smart/https://agenciabrasil.ebc.com.br/sites/default/files/atoms/image/jogos_indigenas_1.jpg?itok=d4fZ8zz9",
+        excerpt: "Modalidades esportivas como corrida de tora, arco e flecha e futebol de cabeça unindo centenas de etnias em celebração.",
+        content: `
+            <p class="font-medium text-stone-800 text-base">Os Jogos dos Povos Indígenas transcendem o conceito tradicional de competição esportiva para se consolidarem como um dos maiores encontros de celebração cultural, espiritualidade e união interétnica do continente. Reunindo dezenas de delegações de diferentes regiões do Brasil e do mundo, o evento transforma a arena em um espaço sagrado de troca de saberes, cantos, pinturas corporais e fortalecimento da identidade originária.</p>
+            <p>Nas modalidades tradicionais, cada prova carrega o significado das atividades cotidianas e rituais das aldeias. Na corrida de tora, equipes carregam troncos pesados de buriti nos ombros em uma demonstração impressionante de força coletiva e sincronia; no arco e flecha e na zarabatana, a precisão reflete a intimidade com a caça e a floresta; já no xikunahity (o futebol de cabeça praticado pelos povos Paresi), a agilidade e o espírito de equipe encantam o público.</p>
+            <p>Mais do que medalhas ou placares, o lema que guia esses encontros resume a filosofia indígena sobre o esporte: o importante não é apenas vencer, mas celebrar juntos a vida e a resistência. Cada corrida, arremesso e dança reafirma ao mundo que os povos indígenas estão vivos, organizados e orgulhosos de suas tradições.</p>
+        `,
+        views: 1250
+    }
+];
 
         let currentAuthor = 'todos';
         let searchQuery = '';
